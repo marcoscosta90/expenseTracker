@@ -19,9 +19,9 @@ const initialState = {
 
 
 const Form = () => {
-    const classes = useStyles();
-    const [formData, setFormData] = useState(initialState);
+    const classes = useStyles();    
     const { addTransaction } = useContext(ExpenseTrackerContext);
+    const [formData, setFormData] = useState(initialState);
     const { segment } = useSpeechContext();
     const [open, setOpen] = useState(false);
 
@@ -66,7 +66,7 @@ const Form = () => {
                         break;
                 }
            });
-           if(segment.isFinal && formData.type && formData.category && formData.type && formData.date){
+           if(segment.isFinal && formData.amount && formData.category && formData.type && formData.date){
                createTransaction();
            }
        }
